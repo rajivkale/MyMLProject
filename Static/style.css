@@ -1,5 +1,6 @@
 
 input[type=text] {
+  width: 400px; /* Set the width of the input box to 300 pixels */
   border: 2px solid red;
   border-radius: 4px;
 }
