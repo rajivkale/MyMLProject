@@ -1,0 +1,221 @@
+As designs become more complex, the only effective way to verify them effectively 
+is with constrained-random testing (CRT). This approach elevates you above the 
+tedium of writing individual directed tests, one for each feature in the design. 
+However, if your testbench is taking a random walk through the space of all design 
+states, how do you know if you have reached your destination? Even directed tests 
+should be double checked with functional coverage. Over the life of a project, small 
+changes in the DUT’s timing or functionality can subtly alter the results from a 
+directed test, so it no longer verifi es the same features. Whether you are using random or
+ directed stimulus, you can gauge progress using coverage. 
+ Functional coverage is a measure of which design features have been exercised by the 
+tests. Start with the design specifi cation and create a verifi cation plan with a detailed list 
+of what to test and how. For example, if your design connects to a bus, your tests need to 
+exercise all the possible interactions between the design and bus, including relevant 
+design states, delays, and error modes. The verifi cation plan is a map to show you where 
+to go. For more information on creating a verifi cation plan, see Bergeron (2006). 
+ In many complex systems, you may never achieve 100% coverage as schedules 
+don’t allow you to reach every possible corner case. After all, you didn’t have time 
+to write directed tests to get suffi cient coverage, and even CRT is limited by the time 
+it takes you to create and debug test cases, and analyze the results. 
+ Figure 9.1 shows the feedback loop to analyze the coverage results and decide on 
+which actions to take in order to converge on 100% coverage. Your fi rst choice is to 
+run existing tests with more seeds; the second is to build new constraints. Only 
+resort to creating directed tests if absolutely necessary. 
+ Back when you exclusively wrote directed tests, the verifi cation planning was 
+limited. If the design specifi cation listed 100 features, all you had to do was write 
+100 tests. Coverage was implicit in the tests — the “register move” test moved all 
+combinations of registers back and forth. Measuring progress was easy: if you had 
+completed 50 tests, you were halfway done. This chapter uses “explicit” and 
+“implicit” to describe how coverage is specifi ed. Explicit coverage is describeddirectly in the test
+ environment using SystemVerilog features. Implicit coverage is 
+implied by a test — when the “register move” directed test passes, you have hopefully 
+covered all register transactions. 
+ With CRT, you are freed from hand crafting every line of input stimulus, but now 
+you need to write code that tracks the effectiveness of the test with respect to the verifi cation plan.
+ You are still more productive, as you are working at a higher level of 
+abstraction. You have moved from tweaking individual bits to describing the interesting design states.
+ Reaching for 100% functional coverage forces you to think more 
+about what you want to observe and how you can direct the design into those states. 
+ 9.1 Gathering Coverage Data 
+ You can run the same random testbench over and over, simply by changing the 
+random seed to generate new stimulus. Each individual simulation generates a database of functional coverage information,
+ the trail of footprints from the random 
+walk. You can then merge all this information together to measure your overall 
+progress using functional coverage as shown in Figure 9.2 . 
+ You then analyze the coverage data to decide how to modify your tests. If the 
+coverage levels are steadily growing, you may just need to run existing tests with 
+new random seeds, or even just run longer tests. If the coverage growth has started 
+to slow, you can add additional constraints to generate more “interesting” stimuli. 
+When you reach a plateau, some parts of the design are not being exercised, so you 
+need to create more tests. Lastly, when your functional coverage values near 100%, 
+check the bug rate. If bugs are still being found, you may not be measuring true 
+coverage for some areas of your design. Don’t be in too big of a rush to reach 100% 
+coverage, which just shows that you looked for bugs in all the usual places. While 
+you are trying to verify your design, take many random walks through the stimulus 
+space;Each simulation vendor has its own format for storing coverage data and as well 
+as its own analysis tools. You need to perform the following actions with those tools.
+• Run a test with multiple seeds. For a given set of constraints and coverage 
+groups, compile the testbench and design into a single executable. Now you need 
+to run this constraint set over and over with different random seeds. You can use 
+the Unix system clock as a seed, but be careful, as your batch system may start 
+multiple jobs simultaneously. These jobs may run on different servers or may 
+start on a single server with multiple processors. So combine all these values to 
+make a truly unique seeds. The seed must be saved with the simulation and coverage results for repeatability. 
+• Check for pass/fail. Functional coverage information is only valid for a successful simulation.
+ When a simulation fails because there is a design bug, the coverage information must be discarded.
+ The coverage data measures how many items 
+in the verifi cation plan are complete, and this plan is based on the design specifi -
+cation. If the design does not match the specifi cation, the coverage values are 
+useless. Some verifi cation teams periodically measure all functional coverage 
+from scratch so that it refl ects the current state of the design. 
+• Analyze coverage across multiple runs. You need to measure how successful 
+each constraint set is, over time. If you are not yet getting 100% coverage for the 
+areas that are targeted by the constraints, but the amount is still growing, run more 
+seeds. If the coverage level has plateaued, with no recent progress, it is time to 
+modify the constraints. Only if you think that reaching the last few test cases for 
+one particular section may take too long for constrained-random simulation should 
+you consider writing a directed test. Even then, continue to use random stimulus 
+for the other sections of the design, in case this “background noise” fi nds a bug.
+9.2 Coverage Types 
+ Coverage is a generic term for measuring progress to complete design verifi cation. 
+Your simulations slowly paint the canvas of the design, as you try to cover all of the 
+legal combinations. The coverage tools gather information during a simulation and 
+then post-process it to produce a coverage report. You can use this report to look for 
+coverage holes and then modify existing tests or create new ones to fi ll the holes. 
+This iterative process continues until you are satisfi ed with the coverage level. 
+ 9.2.1 Code Coverage 
+ The easiest way to measure verifi cation progress is with code coverage. Here you 
+are measuring how many lines of code have been executed (line coverage), which 
+paths through the code and expressions have been executed (path coverage), 
+which single-bit variables have had the values 0 or 1 (toggle coverage), and which 
+states and transitions in a state machine have been visited (FSM coverage). You 
+don’t have to write any extra HDL code. The tool instruments your design automatically by analyzing
+ the source code and adding hidden code to gather statistics. You 
+then run all your tests, and the code coverage tool creates a database. 
+ Most simulators include a code coverage tool. A post-processing tool converts 
+the database into a readable form. The end result is a measure of how much your 
+tests exercise the design code. Note that you are primarily concerned with analyzing 
+the design code, not the testbench. Untested design code could conceal a hardware 
+bug, or may be just redundant code. 
+ Code coverage measures how thoroughly your tests exercised the “implementation” 
+of the design specifi cation, but not the verifi cation plan. Just because your tests have 
+reached 100% code coverage, your job is not done. What if you made a mistake that 
+your test didn’t catch? Worse yet, what if your implementation is missing a feature? 
+The module in Sample 9.1 is for a D-fl ip fl op. Can you see the mistake?The reset logic was accidently left out.
+ A code coverage tool would report that 
+every line had been exercised, yet the model was not implemented correctly. Go 
+back to the functional specifi cation that describes reset behavior and make sure your 
+verifi cation plan includes a requirement to verify this. Then gather functional coverage information on the design during rese
+9.2.2 Functional Coverage 
+ The goal of verifi cation is to ensure that a design behaves correctly in its real environment,
+ be that an MP3 player, network router, or cell phone. The design specifi cation details how the device
+ should operate, whereas the verifi cation plan lists how 
+that functionality is to be stimulated, verifi ed, and measured. When you gather measurements on what
+ functions were covered, you are performing “design” coverage. 
+For example, the verifi cation plan for a D-fl ip fl op would mention not only its data 
+storage but also how it resets to a known state. Until your test checks both these 
+design features, you will not have 100% functional coverage. 
+ Functional coverage is tied to the design intent and is sometimes called “specifi -
+cation coverage,” while code coverage measures how well you have tested the RTL 
+code and is known as, “implementation coverage.” These are two very different 
+metrics. Consider what happens if a block of code is missing from the design. Code 
+coverage cannot catch this mistake and could report that you have executed 100% 
+of the lines, but functional coverage will show that the functionality does not exist. 
+ 9.2.3 Bug Rate 
+ An indirect way to measure coverage is to look at the rate at which fresh bugs are found, 
+show in the graph in Fig. 9.3 . You should keep track of how many bugs you found each 
+week, over the life of a project. At the start, you may fi nd many bugs through inspection 
+as you create the testbench. As you read the design spec, you may fi nd inconsistencies, 
+which hopefully are fi xed before the RTL is written. Once the testbench is up and running,
+ a torrent of bugs is found as you check each module in the system. The bug rate 
+drops, hopefully to zero, as the design nears tape-out. However, you are not yet done. 
+Every time the rate sags, it is time to fi nd different ways to create corner cases.
+The bug rate can vary per week based on many factors such as project phases, 
+recent design changes, blocks being integrated, personnel changes, and even vacation schedules. Unexpected changes in the rate could signal a pote.
+Assertion Coverage 
+ Assertions are pieces of declarative code that check the relationships between design 
+signals, either once or over a period of time. These can be simulated along with the 
+design and testbench, or proven by formal tools. Sometimes you can write the 
+equivalent check using SystemVerilog procedural code, but many assertions are 
+more easily expressed using SystemVerilog Assertions (SVA). 
+ Assertions can have local variables and perform simple data checking. If you need 
+to check a more complex protocol, such as determining whether a packet successfully went through a router, procedural code is often better suited for the job. There 
+is a large overlap between sequences that are coded procedurally or using SVA. See 
+Vijayaraghavan and Ramanadhan (2005), Cohen et al. (2005), and Chapters 3 and 7 
+in the VMM book, Bergeron et al. (2006) for more information on SVA. 
+ The most familiar assertions look for errors such as two signals that should be 
+mutually exclusive or a request that was never followed by a grant. These error 
+checks should stop the simulation as soon as they detect a problem. Assertions can 
+also check arbitration algorithms, FIFOs, and other hardware. These are coded with 
+the assert property statement. 
+ Some assertions might look for interesting signal values or design states, such as a 
+successful bus transaction. These are coded with the cover property statement. 
+You can measure how often these assertions are triggered during a test by using assertion coverage. A cover property observes sequences of signals, whereas a cover group 
+(described below) samples data values and transactions during the simulation. These 
+two constructs overlap in that a cover group can trigger when a sequence completes. 
+Additionally, a sequence can collect information that can be used by a cover group.
+Functional Coverage Strategies 
+ Before you write the fi rst line of test code, you need to anticipate what are the key 
+design features, corner cases, and possible failure modes. This is how you write 
+your verifi cation plan. Don’t think in terms of data values only; instead, think about 
+what information is encoded in the design. The plan should spell out the signifi cant 
+design states. 
+ 9.3.1 Gather Information, not Data 
+ A classic example is a FIFO. How can you be sure you have thoroughly tested a 
+1K FIFO memory? You could measure the values in the read and write indices,
+but there are over a million possible combinations. Even if you were able to simulate 
+that many cycles, you would not want to read the coverage report. 
+ At a more abstract level, a FIFO can hold from 0 to N–1 possible values. So what 
+if you just compare the read and write indices to measure how full or empty the 
+FIFO is? You would still have 1K coverage values. If your testbench pushed 100 
+entries into the FIFO, then pushed in 100 more, do you really need to know if the 
+FIFO ever had 150 values? Not as long as you can successfully read out all values. 
+ The corner cases for a FIFO are Full and Empty. If you can make the FIFO go from 
+Empty (the state after reset) through Full and back down to Empty, you have covered 
+all the levels in between. Other interesting states involve the indices as they pass 
+between all 1’s and all 0’s. A coverage report for these cases is easy to understand. 
+ You may have noticed that the interesting states are independent of the FIFO 
+size. Once again, look at the information, not the data values. 
+ Design signals with a large range (more than a few dozen possible values) should 
+be broken down into smaller ranges, plus corner cases. For example, your DUT may 
+have a 32-bit address bus, but you certainly don’t need to collect 4 billion samples. 
+Check for natural divisions such as memory and IO space. For a counter, pick a few 
+interesting values, and always try to rollover counter values from all 1’s back to 0.
+Only Measure What you are Going to Use 
+ Gathering functional coverage data can be expensive, so only measure what you will 
+analyze and use to improve your tests. Your simulations may run slower as the simulator monitors signals for functional coverage, but this approach has lower overhead 
+than gathering waveform traces and measuring code coverage. Once a simulation 
+completes, the database is saved to disk. With multiple testcases and multiple seeds, 
+you can fi ll disk drives with functional coverage data and reports. But if you never 
+look at the fi nal coverage reports, don’t perform the initial measurements. 
+ There are several ways to control cover data: at compilation, instantiation, or 
+triggering. You could use switches provided by the simulation vendor, conditional 
+compilation, or suppression of the gathering of coverage data. The last of these is 
+less desirable because the post-processing report is fi lled with sections with 0% 
+coverage, making it harder to fi nd the few enabled ones.
+Measuring Completeness 
+ Like your kids in the backseat on a family vacation, your manager constantly asks 
+you, “Are we there yet?” How can you tell if you have fully tested a design? You 
+need to look at all coverage measurements and consider the bug rate to see if you 
+have reached your destination. 
+ At the start of a project, both code and functional coverage are low. As you 
+develop tests, run them over and over with different random seeds until you no longer see increasing values of functional coverage. Create additional co
+tests to explore new areas. Save test/seed combinations that give high coverage, so 
+that you can use them in regression testing.
+What if the functional coverage is high but the code coverage is low as shown in 
+the upper left of Figure 9.4 ? Your tests are not exercising the full design, perhaps 
+from an inadequate verifi cation plan. It may be time to go back to the hardware 
+specifi cations and update your verifi cation plan. Then you need to add more functional coverage points to locate untested functionality. 
+ A more diffi cult situation is high code coverage but low functional coverage. 
+Even though your testbench is giving the design a good workout, you are unable to 
+put it in all the interesting states. First, see if the design implements all the specifi ed 
+functionality. If it is there, but your tests can’t reach it, you might need a formal verifi cation tool that can extract the design’s states and create appropriate stimulus. 
+ The goal is both high code and functional coverage. However, don’t plan your 
+vacation yet. What is the trend of the bug rate? Are signifi cant bugs still popping up? 
+ Worse yet, are they being found deliberately, or did your testbench happen to 
+stumble across a particular combination of states that no one had anticipated? On 
+the other hand, a low bug rate may mean that your existing strategies have run out 
+of steam, and you should look into different approaches. Try different approaches 
+such as new combinations of design blocks and error generators..
+
+
