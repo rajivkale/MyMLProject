@@ -1,0 +1,613 @@
+ 
+
+ 
+
+Interview Benchmark Guidelines – Java 
+
+
+This document describes a set of guidelines which can be used by interviewers to rate the different skills and competencies of candidates on a scale of 1 to 5.  
+The objective of this activity is to bring in uniformity and consistency in the interview process for various job descriptions. This will help to bring all the stakeholders on the same page regarding expectations of competencies and different skills by the candidates.  
+Guidelines for defining skill and competencies benchmark 
+This section defines a general guideline around which benchmarks for various competencies and skills can be defined. The rating scale is kept similar to the one followed by PSL IFF template.  
+PSL IFF Template Competency Scale: (1= Poor, 2= Average, 3= Good, 4=Very Good, 5=Outstanding) 
+Guidelines for benchmarking:  
+Competency Level 
+
+Guideline around expectations  
+
+1-Candidate has only basic elementary knowledge 
+2-Candidate understands certain concepts not classified as elementary related to the skills 
+3-Candidate can demonstrate working knowledge of the above concepts 
+4-Candidate understands advanced concepts related to the skill 
+5-Candidate can demonstrate working knowledge of the advanced concepts 
+
+The above are general guidelines, however there could be exceptions towards above based on specific skills requirement. 
+Applicable Job Descriptions 
+Below is the list of Job Descriptions currently supported by this document.  
+Tech Lead: 
+Cut Off capabilities level for different skills 
+Skills 
+
+Cut Off 
+CS Fundamentals 3 (Good) 
+OOPS 4 (Very Good) 
+Programming 4 (Very Good) 
+Design Principles 4 (Very Good) 
+Communication 4 (Very Good) 
+
+Developer: 
+Cut Off capabilities level for different skills 
+Skills 
+Cut Off 
+CS Fundamentals 3 (Good) 
+OOPS 4 (Very Good) 
+Programming 4 (Very Good) 
+Design Principles 3 (Good) 
+Communication 4 (Very Good) 
+
+CS Fundamentals (Data Structures and Problem Solving) 
+Note: Candidates can use their preferred programming language but not allowed to use built-in methods AFAP. 
+Competency (1 - 5) 
+Description 
+1 (Poor) Person has not used data structures 
+2 (Average) Person understands data structures but has not used in a project, or unable to solve the coding assignment 
+3 (Good) Person can write programs to traverse collections and understands time and space complexity 
+
+Examples 
+Write a program to traverse a linked list to find smallest and largest number 
+Write a program to add n (say n=10) integer elements to the queue from rear and consume k (say k=3) elements from the front. Sort the consumed elements in desc order and print. 
+INPUT: q = [1,2,3,4,5,6,7,8,9,9] 
+q1 = [8,9,9] 
+q2 = [9,9,8] 
+Input: List with a dictionary of album name and band name 
+INPUT: arr = [{‘metal’, ‘rock’}, {‘metallica’, ‘masti’}, {‘master’, ‘masti’}, {‘blaster’, ‘rock’}] 
+Find all band names whose album names start with metal. 
+OUPUT:  [rock, masti] 
+Find nearest elements to a given element by +/- 10% 
+Input: [100, 120, 80, 90, 110] 
+
+k = 100 
+output: [90, 100, 110] 
+Find variations wrt min or max value 
+Input: [100, 120, 80, 90, 110] 
+min = 80 
+variation_min: [+25%,+50%,0%,12.5%,37.5%] 
+max = 120 
+variation_max: [-16%,0%,33%,-25%,-8%] 
+4 (Very Good) Person can apply different data structure concepts and use them to solve problems describing certain scenarios 
+Examples 
+Given an array of integers, create a 2-dimensional array where the first element is a distinct value from the array and the second element is with the value's frequency within the array. Sort the resulting array descending by frequency. If multiple values have the same frequency, they should be sorted ascending. 
+Bucket and sort the elements to get topper in each subject. Assume suitable data structure.  
+Input data below 
+Student 
+
+Arr1 = [2,4,5,6] 
+Arr2 = [5,6,7,8,9] 
+Write a program to output elements which are there in arr1 but not in arr2 and present in arr2 but not in arr1. 
+
+Expected Output: [2,4,7,8,9] 
+Input: Array1 = [1,2,3,4,5,5,3,4,4,4,4,4,5,5,5,5] Print elements having frequency more than or equal to 4 
+Array2 = [{1,1}, {2,1}, {3,2}, {4,6}, {5,6}] 
+Array3 = [4,5] 
+Partial string search  
+Input: I love programming in java and python 
+Pattern: java python golang ruby 
+Search pattern in input string and return true for matched words 
+Expected output 
+java: true 
+python: true 
+golang: false 
+ruby: false 
+Create a tree data structure and add few elements to it up to level 2 
+
+Write a program to delete a given list of keywords from a string 
+Input: I love programming in the golang and reactjs 
+Removal list: in, the, I, and 
+Output: love programming golang reactjs 
+5 (Outstanding) Person understands concepts around advance data structures and write algorithms around AVL trees, B+trees, Red Black trees. 
+Examples 
+Write a program to get the list of all children from a given node up to the bottom of that hierarchy.  
+
+Case-1: if root node 1 is input and then return all children [2,3,4,5] 
+
+Case-2: if leaf most node 3 or 4 or 5 is input then return empty [] 
+
+Case-3: if 2 is input then return [4,5] 
+
+Print level wise sum of all elements in above tree and level having maximum sum. 
+
+Output: [Level0:1, Level1:5, Level2: 9] 
+
+Output: Level2: 9 
+
+Print all parents of a given node 
+
+Create a tree data structure and add few elements to it up to level 3. Now write a logic to cut the tree at a given level and print all elements which were left off. In above tree if we cut the tree at level1, then output = [4,5] 
+
+Technical Skill: OOPS, Functional, Concurrent programming concepts  
+
+Competency (1 - 5) 
+Description 
+1 (Poor) Person does not understand OOPS concepts  
+2 (Average) Person understands following areas well but is not able to give practical examples 
+
+Polymorphism 
+Inheritance 
+Abstraction 
+
+Different types of variables such as constant, static variables, global variables 
+
+Constructors, destructors 
+Overloading operators 
+Overloading functions 
+3 (Good) Person can demonstrate working knowledge on various OOPS features. 
+Area 
+Example Capabilities 
+OOPS examples and code samples 
+Person can use the concepts and demonstrate hands-on knowledge against practical scenarios.  
+E.g., Explain Inheritance with sample classes. Any Live examples in your project which you can provide. 
+C++: What is Virtual function? How does the late binding works? 
+Write sample code to explain dynamic polymorphism. 
+C++: Explain how Virtual Table is used? 
+C++: Can you create Virtual Constructor and Destructor? Is it possible to have these as virtual? When do you use these features? 
+
+Explain use of operator overloading with sample code. 
+Multithreading 
+Person understands multithreading area -  
+Is aware of thread creation and async tasks,  
+Indicate different concepts around mutex, condition variables etc. towards how synchronization of threads is done.  
+Person understands multiprocessing area – async communication, state management, no shared object management across processes 
+4 (Very Good) - Person has knowledge and experience on advanced areas with Live examples 
+Area 
+Example capabilities 
+OOPS Advanced areas and best practices 
+Person understands many of the best practices that are normally associated with the language.  
+What is Abstract class? What is the difference between Abstract class and Interface? Why do you need Abstraction? 
+When do you use Composition and when Inheritance? Explain with example and sample code 
+Explain best practices for exception handling 
+How does garbage collection work? What are the best practices for avoiding memory leaks? 
+Multi-threading 
+Person understands multithreading and is able to demonstrate hands-on expertise 
+Able to write code or debug using threads (e.g. producer, consumer problem with a fixed size buffer using condition variables and mutex) 
+Able to talk about executor life cycle – what order tasks are executed, how many tasks may be queued 
+Functional Programming Concepts 
+What does it mean by functional programming? How is it different from Object oriented programming? 
+What is a pure function? Provide some examples of pure functions. 
+Write custom function so that it can be marked as pure function. 
+What is a Lambda expression? Give example 
+Difference between streams and collections and their applications.  
+
+5 (Outstanding) Person has knowledge on advanced areas like Templates with Live examples 
+Area 
+Example Capabilities 
+
+Templates 
+
+Person understands and demonstrate the concepts related to advanced features such as Templates 
+Function templates 
+Class templates 
+Is able to explain the use of these concepts in live projects 
+Is aware of design tools and can create class diagrams, sequence diagrams 
+Functional Programming Concepts 
+What is recursion? Write sample code to showcase the concept 
+Explain why we may get stack overflow error when we execute a recursive function? 
+Can you modify variables in Functional programs? 
+When do you use functional programming? Please explain advantages/disadvantages of using functional programming. 
+Convert a sequential stream into a parallel stream 
+Programming 
+Competency (1 - 5) 
+Description 
+1 (Poor) Person has not coded in the programming 
+2 (Average) Person understands basics of the programming language but has not used in a project, or unable to solve the coding assignment in this programming language 
+3 (Good) Person can write correct code around most of these areas 
+Java programming 
+Area 
+
+Example questions 
+Data structures: Arrays, Collections, maps, dictionaries, sets 
+//Q: What is the difference between the remove() method of Collection and remove() method of Iterator? 
+//Q: Describe the collections type hierarchy. What are the main interfaces? 
+//Q: How to sort collections? give one example 
+
+A: use comparable and comparator interfaces 
+//Q: How to increase the capacity of ArrayList object manually? ensureCapacity() 
+//Q: Create a thread-safe hash map 
+//Q: What is the difference between fail-fast and fail-safe iterators? give one example each 
+//Q: What is the output of below code? 
+
+int i = 010; 
+int j = 07; 
+
+System.out.print(i); 
+System.out.println(j); 
+
+A: 8 7 
+//Q: Assume that a circular linked list is used to represent a Queue and a single variable p is used to access the Queue.  To which node should p point such that the enQueue and deQueue operations are performed in constant time?  
+A: Node next to the front 
+Classes, Generics, Interfaces 
+//Q: When are objects created in java and by whom? 
+A: The Class objects are constructed by the JVM as classes are loaded by an instance of java.lang.ClassLoader 
+//Q: For creating a google map like application, we need to define points on the map having types like City, Shopping Mall, Station, Airport, Temple etc. 
+Default point type is Point. 
+In this challenge, implement the Point class per the following constructor and methods: 
+The constructor Point(String name, String type, double lat, double, long) 
+The method String getType() to return the Point type 
+The method void setType(String type) to update the Point type 
+The method Point clonePoint() to return the clone of the Point 
+Input: 
+numberOfPoints = 3 
+Pune    City    10.0    20.0 
+PuneAirport Airport  15.0    25.0 
+PuneStation Station  10.0    20.0 
+Support below cases: 
+Case-1: close Pune point to Mumbai 
+Case-2: Update Mumbai type as Metro 
+String manipulation 
+//Q: Is this a valid string in java? String temp = {"a", "b", "c"}; 
+A: String temp [] = {"a", "b", "c"}; 
+//Q: Write a program to remove extra (leading, trailing, embedded) multiple spaces from a string. E.g. “  sky   is the  limit  ” will be “sky is the limit” 
+Lambda Expressions 
+//Q: Can a lambda expression be assigned to a variable? 
+//Q: Write a zero-parameter sample lambda expression 
+//Q: Can functional interfaces be extended by other functional interfaces? 
+A: yes, if their abstract methods have the same signature else not 
+//Q: Write a lambda expression to create and start a thread 
+//Q: What is the problem with below code and re-write the below code using stream API: 
+
+public static int getLength(String input) { 
+if (StringUtils.isEmpty(input) { 
+        throw new IllegalArgumentException(); 
+    } 
+    return input.length(); 
+} 
+List lengths = new ArrayList(); 
+for (String name : Arrays.asList(args)) { 
+    lengths.add(getLength(name)); 
+} 
+A: If we pass empty String as an input – as a result – the code will throw an exception 
+Stream lengths = names.stream() 
+  .map(name -> getLength(name)); 
+Static vs instance variables 
+//Q: What is the output of below snippet? 
+class Constructor 
+{ 
+  static String str; 
+  public void Constructor()  
+   { 
+      System.out.println("In constructor"); 
+      str = "Hello World"; 
+   } 
+   public static void main(String [] args) 
+   { 
+      Constructor c = new Constructor(); 
+      System.out.println(str); 
+   } 
+} 
+
+A: null 
+Exception handling, finally 
+//Q: What will the code print when we call divide(4, 0)? 
+public int divide(int a, int b) { 
+    int c = -1; 
+    try { 
+        c = a / b; 
+    }  
+    catch (Exception e) { 
+        System.err.print("Exception "); 
+    }  
+    finally { 
+        System.err.println("Finally "); 
+    } 
+    return c; 
+} 
+A: Exception Finally 
+
+RDBMS, SQL queries 
+//Q: Ask scenarios covering JOINs, GROUP BY, indexes, PK-FK relationships 
+Microservices framework (Spring boot, zuul, Eureka) 
+Area 
+Example questions 
+Basics of microservices 
+//Q: Tell any 2 Components of a Microservices  
+//Q: Explain microservices components and their use or explain SOA vs microservices 
+//Q: How does API Gateway handle load balancing? 
+RESTful services development using Spring Boot 
+//Q: How to prevent a network or service failure from cascading to other services? 
+A: use @EnableCircuitBreaker annotation to implement a circuit breaker pattern 
+//Q: In Spring, all beans are singleton by default? A: Yes 
+//Q: Purpose of @SpringBootApplication 
+//Q: Write syntax for valid URI for POST and PUT requests for an end-point 
+//Q: use of package org.springframework.boot.autoconfigure 
+//Q: How is client-side discovery different from server-side? 
+
+How to test services? 
+//Q: Explain Mike Cohn’s test pyramid 
+//Q: What is Canary releasing? 
+Annotations 
+//Q: List any 5 valid annotations in spring boot 
+//Q: Explain use of @Autowired 
+A: Include a Repository/Service/Component in a Controller 
+//Q: How to use hibernate(ORM) in Spring boot? A: @Table and add @Column annotation 
+4 (Very Good) Person can write correct code around these areas 
+
+Java programming 
+Area 
+Example questions 
+Composite Classes 
+//Q: Study below class and write output of driver code. 
+public  class A { 
+    public void printName(){ 
+        System.out.println("Value-A"); 
+    } 
+} 
+public class B extends A{ 
+    public void printName(){ 
+        System.out.println("Value-B"); 
+    } 
+} 
+public class C extends A{ 
+    public void printName(){ 
+        System.out.println("Value-C"); 
+    } 
+} 
+1. public class Test{ 
+2.     public static void main (String[] args) { 
+3.         B b = new B(); 
+4.         C c = new C(); 
+5.         b = c; 
+6.         newPrint(b); 
+7.     } 
+8.      public static void newPrint(A a){ 
+9.          a.printName(); 
+10.     } 
+11. } 
+//Q: Create a map of map and look up an element 
+Method overloading, parameterized constructors 
+//Q: What is the output of below program? 
+import java.util.*;  
+public class MyPancake implements Pancake {  
+    public static void main(String[] args) {  
+        List<String> x = new ArrayList<String>();  
+        x.add("3"); x.add("7"); x.add("5");  
+        List<String> y = new MyPancake().doStuff(x);  
+        y.add("1");  
+        System.out.println(x);  
+    } 
+    List<String> doStuff(List<String> z) {  
+        z.add("9");  
+        return z;  
+    }  
+}  
+interface Pancake {  
+    List<String> doStuff(List<String> s);  
+} 
+A: compile-time error 
+//Q: import java.util.*; 
+public class Compares 
+{ 
+    public static void main( String args[]) 
+    { 
+        String[] cities = {"Bangalore","Pune","San Francisco","New York City"}; 
+        MySort ms = new MySort(); 
+        Arrays.sort(cities, ms); 
+        System.out.println(Arrays.binarySearch(cities, "New York City")); 
+    } 
+    static class MySort implements Comparator 
+    { 
+        public int compare( String a, String b) 
+        { 
+            return b.compareTo(a); 
+        } 
+    } 
+} 
+Answer: compile-time error 
+Garbage collection, JVM tuning params 
+//Q: Study below code. When does the “Demo” object instantiated at line 6 become eligible for garbage collection? 
+class Test  
+{   
+    private Demo d;  
+    void start()  
+    {   
+        d = new Demo(); /* Line 6 */ 
+        this.takeDemo(d); /* Line 7 */ 
+    } /* Line 8 */ 
+    void takeDemo(Demo demo)  
+    {  
+        demo = null;   
+        demo = new Demo();  
+    }  
+} 
+A: When the instance running this code is made eligible for garbage collection 
+//Q: An object obj1 can access object obj2. Obj2 is eligible for garbage collection, what happens with obj1?  
+A: obj1 is also eligible for garbage collection 
+//Q: What is survivor ratio in JVM options? 
+multi-threading / multi-processing: Executors, Thread Pools, async 
+//Q: How to stop the execution of a Thread? wait() 
+//Q: Create a parallel stream pipeline using forkJoinPool 
+//Q: Create a java ExecutorService simple example and add 3 callable or runnable tasks to it. 
+//Q: Spot the differences in methodA and methodB? 
+public class Test { 
+public synchronized void methodA(int i, String msg){ 
+       log.writeln(Integer.toString(i)); 
+       log.writeln(msg); 
+    } 
+    public void methodB(int i, String msg){ 
+       synchronized(this){ 
+          log.writeln(Integer.toString(i)); 
+          log.writeln(msg); 
+       } 
+    } 
+} 
+A: None 
+Parallel processing/Distributed computing 
+//Q: What are the advantages of a distributed system? 
+//Q: Difference between shards and replicas with an example 
+//Q: Parallalize a file reading task using concurrent executorService. 
+//Q: Any one issue with using newCachedThreadPool A: if there is too much of data 
+API Development 
+//Q: implement lazy loading using the intersection observer API 
+//Q: Any 2 options as part of standard Request fields 
+//Q: Explain different 40x response status codes in RESTful API Design? 
+//Q: Explain Setter Dependency Injection (SDI) vs. Constructor Dependency Injection 
+A: InjectwithConstructor bean vs InjectwithSetter bean 
+//Q: Create a REST API/controller to return list of products, use appropriate annotations 
+@RestController   
+@Autowired  
+@GetMapping(value = "/productlist")   
+JDBC, Hibernate, HQL, Row Batching, CRUD operations, Relationships handling 
+//Q: In JPA/Hibernate, to insert a record in a table do we have to write a query? 
+//Q: How to read configuration file and mapping files in hibernate 
+//Q: Create an immutable and thread-safe session in hibernate 
+Caching (any framework used like Redis, Memcached, ehcache) 
+//Q: Write a Service Worker run-time caching snippet to cache a lookup data. 
+//Q: Different annotations for caching 
+//Q: Create a simple GET service and cache the data 
+Session/transaction management 
+//Q: List dependencies for http session management 
+A: org.springframework.session, spring-data-redis 
+//Q: How to create http sessions counter controller: A: use HttpSessionListener 
+OOPs patterns 
+//Q: Purpose of @Scope("prototype") and how is it specified 
+A: Return a new bean instance each time when requested 
+//Q: How to create a singleton bean per container 
+//Q: How to create a session bean per http session 
+Authentication/Authorization (API-level) 
+//Q: Difference between OAuth2 and TLS 
+A: OAuth is based on clients sending tokens rather than explicit credentials. TLS is a protocol that prevents malicious data modification and corruption. 
+//Q: How to SSL-enable service communication? What config changes are required? 
+Json, xml parsing 
+//Q: Create a nested json document using LinkedHashMap and JSONObject, print it 
+Microservices (Spring Boot, zuul, Eureka) 
+Area 
+Example questions 
+Spring Web Services 
+//Q: Question on different MVC annotations: 
+A: 
+@RequestMapping 
+@RequestBody 
+@PathVariable 
+@RequestParam 
+@ResponseBody 
+@ExceptionHandler 
+@ResponseStatus 
+@Controller 
+@RestController 
+@ModelAttribute 
+@CrossOrigin 
+//Q: Explain any 2 cross-cutting concerns? 
+A: externalized configuration, logging, health checks, metrics, service registration and discovery, circuit breakers 
+//Q: What is a service template? 
+//Q: How to achieve distributed tracing i.e. understand the behavior of an application and troubleshoot problems at run-time? 
+Spring data JPA 
+//Q: Going to the database is costly, how to improve performance and consistency? 
+A: by batching multiple inserts into one, create a Spring Data JPA batch insert. 
+//Q: What is the default behavior of saveAll() in inserts? 
+A: does each insert separately 
+//Q: Explain different params to control batching.  
+A: 
+spring.jpa.properties.hibernate.jdbc.batch_size=10 
+spring.jpa.properties.hibernate.order_inserts=true 
+Spring Batch 
+//Q: How to configure a Spring Batch job to read data from a CSV file and write into a table.  
+A: Focus on context.xml changes required, transaction management. 
+Spring Security 
+//Q: Create configuration to authorize http requests 
+A: allow anonymous access on /login, restrict /admin to ADMIN role only 
+//Q: Explain any one Spring security XML config, webSecurityConfig.xml tags 
+Non-functional aspects 
+Area 
+Example questions 
+Unit test automation (jUnits, jmeter, Mockito) 
+//Q: Write a junit test class to test following singleton class 
+public class SomeSingletonClass { 
+    private static volatile SomeSingletonClass singletonInstance = new SomeSingletonClass(); 
+    private SomeSingletonClass() {   } 
+    public static SomeSingletonClass getInstance(){ 
+        return singletonInstance; 
+    }  
+} 
+Source code management (git commands) 
+//Q: git clone, checkout, pull, push, merge, branch 
+Performance testing and monitoring tools 
+//Q: How to perform concurrent user testing? 
+//Q: How to generate test data? 
+Build management tools (sbt, maven, dependency management, fat vs lean jar) 
+//Q: mvn commands: clean, install, test, package 
+CI/CD tools (Jenkins) 
+//Q: Have you created Jenkinsfile? What is the difference between pipeline and agent directives? 
+//Q: How to run multiple builds using just one Jenkins instance?  
+A: using agent directive 
+Code coverage (sonar) 
+//Q: Use of sonar-maven-plugin 
+//Q: What all things are captured: bugs, vulnerabilities, code smells, duplications, coverage 
+5 (Outstanding) Person can explain complex architectures or can talk authoritatively on modern tech stack covering any of the below topics 
+Containers (Docker, Kubernetes) 
+Cloud-native applications 
+Analytics (Streaming, batch processing, kafka, spark) 
+NoSQL DB (MongoDB, ElasticSearch, Cassandra, HBase…) 
+Monitoring tools (like Prometheus, Graphana) 
+Microservices - Service Registry, Discovery, Configuration, Monitoring, Microservice communication 
+
+Service Registry, Discovery, Configuration, Monitoring 
+//Q: Explain auto-configuration beans 
+//Q: Explain the use of Eureka and Consul? How to register a service with Eureka? 
+//Q: What is Client-Side Load Balancing and how can it be achieved?  
+A: Netflix Feign 
+Microservice communication 
+//Q: We have two separate applications - a UI application in ReactJS and a simple REST API. You want to work around CORS and the Same Origin Policy restriction of the browser and allow the UI to call the API even though they don't share the same origin.  
+A: We can use the Zuul proxy in the UI application to proxy calls to the REST API. Zuul is a JVM based router and server side load balancer by Netflix 
+//Q: How to create custom Spring Boot auto-configuration from a DB say postgresql? What if this datasource is not available? 
+A: Create a datasource bean. 
+//Q: Different sync communication protocols A: REST, gRPC, Apache Thrift 
+//Q: How to achieve async 1:m communication? 
+A: using message queues like Apache Kafka, ZeroMQ 
+Design Principles 
+Competency (1 - 5) 
+Description 
+1 (Poor) Person knows few names of the design patterns but unable to explain the use 
+2 (Average) Person can explain few design patterns but is unable to map to real life requirements 
+3 (Good) Person can explain and map design patterns and SOLID principles 
+
+Area 
+Example Capabilities 
+Design Patterns 
+Use case for Singleton – e.g., when initializing a Logger class, or a database connection  
+Use of Factory – e.g., when you need to support multiple database systems (SQL Server and Oracle) in future, or when you have multiple file formats to be supported with almost similar processing logic  
+Use of Builder – e.g., when constructing a large object like a Virtual Machine which is built using different objects like network, storage etc.  
+Use case for Façade pattern – hide complexity of the larger system and provide a simple interface to the client (E.g., Customer care is a façade for their customers for different services) 
+For a given scenario, which design pattern makes most sense? E.g., Façade vs Adaptor vs Decorator 
+SOLID Principles 
+Able to explain how Dependency Inversion works and what benefits it can give (reusability, testability etc.)  
+Able to explain Open Closed Principle and how to practice it using inheritance and interfaces  
+Define a class that follows Single Responsibility principle 
+State some advantages of following SOLID principles (e.g., extensibility, readability, testability) 
+How do you enforce Dependency Inversion? E.g., coding against interfaces rather than implementations 
+4 (Very Good) Person has practical experience implementing design patterns and SOLID principles 
+Person is able to explain the advantages and disadvantages of using these principles 
+Person has understanding of best practices for developing reliable code/system 
+
+Area 
+Example Capabilities 
+Design Patterns 
+Able to write a Singleton class and can explain how it works in multi-threading context, whether it can be inherited/cloned etc. (look for private constructor, sealed/final keywords etc.)  
+Shows how factory pattern is implemented with a practical example from project  
+Able to explain various design patterns used in the project (current or previous) with proper justification 
+Can think through project design to see where a design pattern makes sense and justify the same 
+Draw UML diagram of a design pattern 
+SOLID Principles 
+Able to relate to project context - E.g., how Open/Closed principle is followed  
+How Interface Segregation principle is applied in a working project  
+Able to explain with real project experience on which SOLID principles are strictly followed and which one are not followed with proper reasoning (legacy code with not much control over it etc. are typical reasons)  
+What are some of the best practices that are checked during code reviews? 
+How to ensure that best practices and guidelines are followed for a new project development? (Response should include creating a base framework that follows SOLID principles etc.) 
+5 (Outstanding) Person also understands latest patterns like Microservices 
+
+Area 
+Example Capabilities 
+Microservices 
+Talk about some of the design patterns followed during Microservices implementation (e.g., CQRS, Aggregator, API Gateway) 
+How to implement Observability pattern/Distributed tracing in microservices? 
+Talk about database patterns followed in microservices implementation and justify the use of it 
+Explain the thought process when breaking a monolith to microservice based architecture 
+Advantages of using microservice based architecture over monolithic architecture? 
+ 
