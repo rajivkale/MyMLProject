@@ -1,0 +1,102 @@
+Hi, good afternoon, everyone. So we all are here for a purpose. This program, we are calling it as interviewer certification master class. So it is not about that you all know don't know how to take interviews and so you all are very well versed in taking interviews and also what we are defining here is there are different times when we take interviews sometimes we go for a capacity hiring sometimes we go for a lateral hiring and there is a requirement of 102 hundred engineers right.
+So what happens is many a times what have been observed till date test.
+In some cases, the quality of ingenious are not up to the mark, and then that raise to the different challenges that unable to perform on different projects. For example, if you have hired a person for a certain project and if there is no need in that project and then when that person move to the other project, that person is unable to perform. So while taking interviews what all the things we should be taking care while saying that person is in or what all needs to be considered right just to make a process is standardized.
+All over the persistent. So two different interviewers. If they are taking interviews, ideally in the kind of rating they are giving and the kind of understanding they are having, that should be little bit at the up to the map it should. It cannot be same but yeah, but it can be a standardized to wait to understand that how much dating should be given, what should be the criteria to say yes or no kind of thing. So that is something we are going to cover. So the session is going to be like how to greet meet people. So our software skill trainer is going to give us an idea on that.
+And then our technical trainer will give you an idea that what all things, what all guidelines to be followed while taking it. OK. So we are going to start actually.
+Yes.
+Wish you were speaking? Yeah.
+Someone who's not registered.
+E
+Event_RN2:30
+Hi, thank you so much for participating in the program for interviewing skills and more importantly, thank you so much for your time when you interview for persistent.
+If that candidate is really working for TCS.
+Yep, then fair enough, but not working for TCS, and if it's really good, then formally they end up being fake. That's my experience. Yes. So I think we should have a, yeah. So we should be very concrete. Yeah. Such. If you want somebody on a payroll, then payroll. But if you know, last Monday we are desperate, then we still should not give it. We should not accept people who are on 3rd party files. That that's one more feedback that that's a process we ended thing not poor thing.
+In tool I have suggestion if you can capture the feedback for the interviewer as well, because sometimes like panel is new right who is not into the processes from the long time. So he started taking interview. So we found that most of the L twos are getting so many like you know one feedbacks that those are they're not correct or maybe like not relevant with respect to the GD. So also like it should be a transparent with the you know transparency in the system if you can get it.
+Will take. Yeah. For this thing on leave for this point only. We are arranging this program and this workshop and then. But candidate if candidate also give the feedback of the interviewer that also like.
+May be helpful somehow.
+Who said session this? We will think I asked by the way. You can write back to the TA team if you had any feedback about this interview because instead of going to LinkedIn or social better I that's correct. Correct. You put it here, right? So we can also restrict somewhere like you know going.
+Outside in two social and he's putting someone doesn't happen on glass door glass.
+I wish I had Glassdoor inside, right, so it is people go there and put interview feedback, so there's an option for interview feedback, experience, feedback, exit feedback. Internal feedbacks are horrible, right? I mean, they fail the interview themselves and therefore the complete frustration on the company, really abusive. And there are people who get influenced.
+So probably you should avoid that and share a link with them directly. OK to please share us the interview so that you know in class so you can go and actually make a comment saying that so and so and so person was interviewed but he refused to put in a feedback because this is fake.
+Highlight this one. That's what you taken because nice point.
+We can't do this mandatory.
+And give them an option. So some candidates like the they they're really genuine candidates, they don't have that much time to submit the feedback. But yes, if someone is having a concern so they can rent it out there. Yeah. Instead instead of going on now. Yeah. Yeah. So should we definitely. Just one check it. So they're gonna put in the correct so that.
+
+Mukesh Chaudhari left the meeting
+R
+RN_TR_Takshashila2:56:07
+We'll take into consideration so anything else?
+Any help?
+Thanks nidhi.
+
+===============
+
+Ketaki's session
+=======================
+1) pre-interview phase: go through Job Description.
+Interviewer must understand the Job description fully. Go through it in advance.
+Reach out to requestor to share JD and study it.
+Then go through the CV of the candidate. Look at it closely.
+Decide before hand how would you assess if the candidate could be good.
+Check social media, endorsements, LinkedIN, certifications.
+ 
+2) Actual interview
+Make candidate comfortable and relaxed. Make him/her tension free.
+You may introduce yourself as well.
+Now need to look at technical guidance.
+Be ready with technical questions that you may ask in your head. These will depend on candidate's project experience.
+Capture the feedback and body language clues. Check candidate's clarity of thoughts and the confidence level.
+Go on filling the Interview Feedback form.
+
+3) Guidelines
+This specifies how you would rate candidate on the scale of 1 to 5 for various skills. 1 being lowest and 5 being great knowledge.
+e.g. 
+CS fundamentals as a skill (data structures, stack etc.)
+Document gives example question and also defines what rating you would give for candidate's response.
+Programming as a skill.
+
+Sometimes non-functional areas need to be tested like IDEs. Or Git. DevOps. CI_CD.
+You can find out how much the candidate is having hnads-on.
+
+Also, communication as a skill is important too.
+
+How to manage the guideline part if the technology we are interviewing for is not part of the document set we have?
+Try to search the nearest one and create one.
+
+Cut-off capabilities levels for different skills as well defined.
+Follow these guidelines.
+
+For a given role (position) what is the "cut-off" that is skill wise minimum rating candidate must secure?
+For a given ratings secured by the candidate which highest role he/she can play?
+Create these two tables for each technilogy such as Java, .NET, Python, Cloud
+
+IFF contains
+Knowledge (previous projects)
+Technical skill evaluation
+Competencies (Analytics and problem solving), Communication skills, self starter
+Overall assessment (positive aspects), shortcomings, overall finding
+Message to next interviewer (mainly if you are doing L1 or in somce cases L2)
+This message should convey the next interviewer - what to probe on more, what skills are not yet assessed
+Next interviewer needs to study the previud interviewers comments and plan how to conduct next interview.
+There is no point in repeating the same areas and same quetions.
+*** Write consise and precise comments.
+record what you asked and what was the response.
+##### A q can be state True or False: 
+There is no need to what you asked and what candidate responed with on a IFF.   True/False   Answer is False
+##### A q can be state True or False: 
+On IFF giveing merely rating for each skill would suffice.  True/False     Answer is False
+
+As an interviewer we are taking responsibility for candidate selection and also for candidate rejection.
+There is no point is unnecessarily deferring the rejection to L2.
+Why? Better not to waste L2 time when you have already found candidate not selectable.
+
+If CV and the candidate is not fit for the JD you are looking at but otherwise looks good. Then refer him/her back to TA team.
+Send email to the TA team. Take this call before submitting the IFF.
+
+Need to modify IFF software so that default setting should be NA and not should be RED.
+
+If candidate reapplies is there a way to get previous feedback?
+No. System doesn't give this.
+
+Guidelines are important but don't merely take Qs from the guidelines.
+
